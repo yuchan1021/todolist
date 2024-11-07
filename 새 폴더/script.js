@@ -1,22 +1,24 @@
 const Check = document.querySelector("#btn")
 const todoInput =document.querySelector("#todoInput")
-const div =document.querySelector('#div')
-function todolist () {
-    const main=documet.createElement('div')
+const nuwdiv =document.querySelector("#nuwdiv")
 
-    const box=documet.createElement('input')
+
+Check.addEventListener('click', (event) => {
+    const main = document.createElement('div') 
+
+    const box = document.createElement('input')
     box.setAttribute('type','checkbox')
     
     
-    const title=document.createElement('span')
+    const title = document.createElement('span')
     title.textContent=todoInput.value
     
-    const remove=createElement('button')
+    const remove = document.createElement('button') 
     remove.textContent='삭제'
 
 
         remove.addEventListener('click', (event) => {
-            event.currentTarget
+            event.currentTarget.parentNode.parentNode.removeChild(event.currentTarget.parentNode)
         })
 
         box.addEventListener('change', (event) => {
@@ -31,6 +33,6 @@ function todolist () {
         main.appendChild(title)
         main.appendChild(remove)
 
-        div.appendChild(main)
+        nuwdiv.appendChild(main)
         todoInput.value = ''
-    }
+})
